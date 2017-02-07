@@ -1,6 +1,6 @@
 SQL query scenario： 
 find all supervisors who has more than 4 employees directly under him from source table [dbo].[EMPLOYEE]
----answer-----
+-- my code -----
 with CTE as
 (
 select supervisor_employee_id,Total_employees_count=count(distinct employee_id)
