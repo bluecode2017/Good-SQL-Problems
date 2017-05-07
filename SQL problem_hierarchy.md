@@ -1,7 +1,7 @@
 ## SQL problem：
 ### find all supervisors who has more than 4 employees under him 
-* ** （include directly under and undirectly under） **
-hierarchy structure
+** （include directly under and undirectly under） **
+** hierarchy structure **
 ------my code----
 ```
 with CTE(sup_id,emp_id) as
