@@ -1,8 +1,9 @@
-SQL problem：
-find all supervisors who has more than 4 employees under him （include directly under and undirectly under）
+## SQL problem：
+### find all supervisors who has more than 4 employees under him 
+* ** （include directly under and undirectly under） **
 hierarchy structure
 ------my code----
-
+```
 with CTE(sup_id,emp_id) as
 (
 select distinct sup_id ,emp_id=sup_id from  [dbo].[EMPLOYEE] e 
@@ -20,3 +21,4 @@ on t.sup_id=CTE.emp_id )
 select CTE2.sup_id,a.name,CTE2.emp_num
 from CTE2 left join [dbo].[EMPLOYEE] a
 on CTE2.sup_id=a.emp_id
+```
