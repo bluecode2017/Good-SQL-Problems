@@ -1,15 +1,15 @@
-1.Given a table with 2 columns: colA & colB, write a SQL to output the duplicate rows. 
+### 1.Given a table with 2 columns: colA & colB, write a SQL to output the duplicate rows. 
 Table has values such as: a, 1; a, 2; a, 3; b, 1; b, 2; b, 3; a, 1; a, 2; a, 1
  
 My answer:
- 
+ '''
 select colA, colB
 From table
 group by colA, colB
 having count(*)>1
- 
+ '''
 ------------------------------------  
-2.Given 2 tables: Order & OrderDetail. Design schema as needed to answer the below questions. Send the schema design.
+### 2.Given 2 tables: Order & OrderDetail. Design schema as needed to answer the below questions. Send the schema design.
  
 My answer:
 
@@ -39,7 +39,7 @@ CREATE TABLE [dbo].[tb_OrderDetail](
 ) ON [PRIMARY]
  
 ------------------------------------  
-a. Write a SQL statement to find the number of orders that contained ice cream and either bread or milk and were made in last month?
+###  a. Write a SQL statement to find the number of orders that contained ice cream and either bread or milk and were made in last month?
  
 My answer:
 select count(*) from tb_Order
@@ -51,7 +51,7 @@ on A.OrderID=B.OrderID
 and A.ProductName='ice cream' and (B.productname ='bread' or B.ProductName='milk' )
 )  and datediff(m,OrderDate ,getdate())=1
 ------------------------------------  
-b. How many customers made orders that were more than $100 in Jan’16?
+###  b. How many customers made orders that were more than $100 in Jan’16?
  
 My answer:
 select count(CustomerID)
@@ -59,7 +59,7 @@ from tb_Order
 where Amount>100 and year(OrderDate)='2016' and month(OrderDate)=1
  
 ------------------------------------  
-c. How many orders contained just one Order Item?
+###  c. How many orders contained just one Order Item?
  
 My answer:
 select count(*)
@@ -70,7 +70,7 @@ group by OrderID
 having count(OrderDetailID)=1
 )as tmp
 ------------------------------------ 
-d. How many customers came in last month but did NOT come in last-last month. Please answer using a ‘join’ without using ‘except’.
+###  d. How many customers came in last month but did NOT come in last-last month. Please answer using a ‘join’ without using ‘except’.
  
 My answer:
  
