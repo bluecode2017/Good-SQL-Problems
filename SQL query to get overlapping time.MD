@@ -1,10 +1,10 @@
-SQL Server怎样求得两组时间段之间，重叠了的时长
+### problem : SQL Server怎样求得两组时间段之间，重叠了的时长
 
 例如：
 时间段1：2013-06-13 08：00 至 2013-06-13 18：00
 时间段2：2013-06-13 15：00 至 2013-06-13 20：00
 
-
+```
 Create Table #t
 (startdate1 datetime,
 enddate1 datetime,
@@ -21,3 +21,4 @@ Case When startdate1 > enddate2 Then 0
          Else 0 End
 
 FROM #t
+```
