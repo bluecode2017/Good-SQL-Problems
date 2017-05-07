@@ -1,7 +1,7 @@
-requirements: compare same time period this year and previous year
+### senari orequirement: compare same time period this year and previous year 计算同比
 
-solutions:
-
+solutions: 伪代码，未验证
+```
 with cte as
 (
 select Y=year(orderdate),sum(sales)
@@ -13,3 +13,4 @@ select
 from CTE thisyear
 left join CTE preyear
 on thisyear.Y=preyear.Y+1
+```
